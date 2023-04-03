@@ -113,15 +113,15 @@ function saque() {
         alert("Ocorreu algum erro!(Provavelmente de digitação)"); // poderiamos deixar sem o alert
         saque();
     } else if (ret >= 0 && ret <= saldoT) {
-        saldoT -= ret;
+        saldoT -= Number(ret);
         if (ret != 0) {
             if (extratos.retirado[0] == 0) {
-                extratos.retirado.splice(0, 1, ret);
+                extratos.retirado.splice(0, 1, Number(ret)); 
                 inicio();
-            }
+                }
             else {
-                extratos.retirado.push(ret);
-                inicio();
+                extratos.retirado.push(Number(ret));
+                inicio(); 
             }
         } else {
             inicio();
@@ -139,15 +139,15 @@ function deposito() {
         alert("Ocorreu algum erro!(Provavelmente de digitação)");
         deposito();
     } else if (depos >= 0) {
-        saldoT += depos;
+        saldoT += Number(depos);
         if (depos != 0) {
             if (extratos.depositado[0] == 0) {
                 extratos.depositado.length--;
-                extratos.depositado.push(depos);
+                extratos.depositado.push(Number(depos)); 
                 inicio();
-            }
+                }
             else {
-                extratos.depositado.push(depos);
+                extratos.depositado.push(Number(depos)); 
                 inicio();
             }
         } else {
